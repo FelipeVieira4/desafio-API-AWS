@@ -18,15 +18,12 @@ const verificarDataPalindromo = (data) => {
 };
 
 
-const procurarProximaDataPalindromo = (data) =>{
-  const dataArray = data.split("/");// separar string data em array [0] = dia,[1] = mês e [2] = ano
-
-  let ano = Number(dataArray[2]);
+const procurarProximaDataPalindromo = (ano) =>{
 
   ano++;// começar pelo proxímo ano
 
   //Último ano válido
-  while (ano<9000){
+  while (ano<9092){
 
     let mes = Number(ano.toString().slice(0, 2).split("").reverse().join(""));
     let dia = Number(ano.toString().slice(2, 4).split("").reverse().join(""));
@@ -50,4 +47,4 @@ const procurarProximaDataPalindromo = (data) =>{
 }
 
 verificarDataPalindromo("12/02/2021");
-console.log(procurarProximaDataPalindromo("12/02/2012"));
+console.log(procurarProximaDataPalindromo("2012"));
