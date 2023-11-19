@@ -19,28 +19,35 @@ const verificarDataPalindromo = (data) => {
 
 
 const procurarProximaDataPalindromo = (data) =>{
-  const dataArray = data.split("/");
+  const dataArray = data.split("/");// separar string data em array [0] = dia,[1] = mês e [2] = ano
 
   let ano = Number(dataArray[2]);
-  ano++;
-  while (true) {
+
+  ano++;// começar pelo proxímo ano
+
+  //Último ano válido
+  while (ano<9000){
+
     let mes = Number(ano.toString().slice(0, 2).split("").reverse().join(""));
     let dia = Number(ano.toString().slice(2, 4).split("").reverse().join(""));
 
-    if(dia>=13){
-      dia=1;
-      mes++;
-    }
+    let qtdDiasMes = new Date(ano,mes,0).getDate();
 
-    let dataRegex = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
+    if( ( (dia > 0 && dia <= qtdDiasMes) || dia == 22) && mes <= 12){
 
-    if (verificarDataPalindromo(dataRegex)) {
-      return dataRegex;
+      let dataRegex = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
+
+      if (verificarDataPalindromo(dataRegex)) {
+        return dataRegex;
+      }
+
     }
 
     ano++;
   }
+
+  return "PASSOU DA ULTIMA DATA PALINDROMO VÁLIDA";
 }
 
 verificarDataPalindromo("12/02/2021");
-console.log(procurarDataPalindromo("12/02/2021"));
+console.log(procurarProximaDataPalindromo("12/02/2012"));
