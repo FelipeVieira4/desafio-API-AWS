@@ -1,10 +1,15 @@
- service: serverless-project-name
- 
- provider:
-   name: aws
-   runtime: nodejs10.x
-   stage: stage, 'dev'
-   region: region, 'us-east-1'
-   memorySize: 128
-   timeout: 3
- 
+  service: web-app-123
+
+  provider:
+    name: aws
+    runtime: nodejs10.x
+    stage: stage, 'dev'
+    region: region, 'us-east-1'
+    memorySize: 128
+    timeout: 3
+  functions:
+    source:
+      handler: source.handler
+      description: function description
+      
+  

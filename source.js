@@ -1,5 +1,3 @@
-
-
 const verificarDataPalindromo = (data) => {
 
   if (typeof data !== "string") {
@@ -47,5 +45,9 @@ const procurarProximaDataPalindromo = (ano) =>{
   return "NÃO EXISTE MAIS DATA PALINDROMO VÁLIDA NESSE FORMATO DIA/MES/ANO";
 }
 
-verificarDataPalindromo("2020");
-console.log(procurarProximaDataPalindromo("2012"));
+exports.handler = async function(event){
+  return {
+    statusCode: 200,
+    body: JSON.stringify({mensage: "Hello World"})
+  };
+}
