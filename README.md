@@ -1,5 +1,9 @@
 # Desafio da Adapcon criar uma API
 
+## Softwares Útilizados
+* NodeJS - (v20.8.1 - Fedora39)
+* ServerLess - (3.37.0)
+* AWS - Amazon Web Service - (free trial)
 
 ## Links de Artigos e Sites utilizados
 ### Serverless
