@@ -19,7 +19,7 @@ const verificarDataPalindromo = (data) => {
 
 const procurarProximaDataPalindromo = (ano) =>{
 
-  ano++;//Ir pro proxímo ano
+  ano++;//Começar no proxímo ano
 
   //Loop até último ano válido
   while (ano<9092){
@@ -29,7 +29,7 @@ const procurarProximaDataPalindromo = (ano) =>{
 
     let qtdDiasMes = new Date(ano,mes,0).getDate();
 
-    if((dia <= qtdDiasMes || dia == 22) && mes <= 12){
+    if((dia <= qtdDiasMes) && mes <= 12){
 
       let dataRegex = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
 
@@ -44,6 +44,8 @@ const procurarProximaDataPalindromo = (ano) =>{
 
   return "NÃO EXISTE MAIS DATA PALINDROMO VÁLIDA NESSE FORMATO DIA/MES/ANO";
 }
+
+console.log(procurarProximaDataPalindromo(2025));
 
 exports.handler = async function(event){
   return {

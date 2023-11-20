@@ -14,10 +14,15 @@ seguindo exemplo:
 ### Observação:
 É recomendado para números com valores menores que 10 devem apresentar um zero a esquerda do valor.
 
+correto :
+```json
+"data":"02/02/2020"
+```
 
-"data":"02/02/2020" - CORRETO
-
-"data":"2/2/2020" - INCORRETO
+incorreto :
+```json
+"data":"2/2/2020"
+```
 
 ## Softwares Utilizados
 * Node.js - (v20.8.1 - Fedora 39)
