@@ -19,48 +19,54 @@ const verificarDataPalindromo = (data) => {
 
 const procurarProximaDataPalindromo = (ano) =>{
 
-  let mes = Number(ano.toString().slice(0, 2).split("").reverse().join(""));
-  let dia = Number(ano.toString().slice(2, 4)); // 2025 -> 25
+  let mes =Number(ano.toString().slice(0, 2).split("").reverse().join(""));
+  let dia = ano.toString().slice(2, 4); // 2025 -> 25
 
   let segundoDigitoDia = Number(dia.toString().slice(0, 1)) // dia:24 -> 2
   let primeiroDigitoDia = Number(dia.toString().slice(1, 2)) //      24 -> 4
 
-  let qtdDiasMes = new Date(ano,mes,0).getDate();
+  let qtdDiasMes;
 
   if(primeiroDigitoDia > 3){
     primeiroDigitoDia = 0;
     segundoDigitoDia++;
   }
 
-  
-  console.log(segundoDigitoDia+""+primeiroDigitoDia);
-  
-  
-  //##X#
-  for(let segundoDigito = segundoDigitoDia; segundoDigito < 9; segundoDigito++){
+  while(true){
 
-    //###X
-    for(let primeiroDigito = primeiroDigitoDia; primeiroDigito <= 3; primeiroDigito++){
+    //##X#
+    for(let segundoDigito = segundoDigitoDia; segundoDigito < 9; segundoDigito++){
 
-      let diaString = (primeiroDigito+""+segundoDigito);
+      //###X
+      for(let primeiroDigito = primeiroDigitoDia; primeiroDigito <= 3; primeiroDigito++){
 
-      // 02/02/0202 -> 02/02/2020 -> inverte o dia
-      let dataRegex = `${diaString.toString()}/${mes.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0').split("").reverse().join("")+diaString.split("").reverse().join("").padStart(2, '0')}`;
+        let diaString = (primeiroDigito+""+segundoDigito);
 
-      console.log(dataRegex);
+        // 02/02/0202 -> 02/02/2020 -> inverte o dia
+        let dataRegex = `${diaString.toString()}/${mes.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0').split("").reverse().join("")+diaString.split("").reverse().join("").padStart(2, '0')}`;
 
-      /*
-      qtdDiasMes = new Date(mes.toString().padStart(2, '0').split("").reverse().join("")+diaString,mes.toString().padStart(2, '0'),0).getDate();
-      */
+        console.log(dataRegex);
 
-      if (verificarDataPalindromo(dataRegex)) {
-        return dataRegex;
-      }
+        /*
+        qtdDiasMes = new Date(mes.toString().padStart(2, '0').split("").reverse().join("")+diaString,mes.toString().padStart(2, '0'),0).getDate();
+        */
 
-    }  
+        if (verificarDataPalindromo(dataRegex)) {
+          return dataRegex;
+        }
 
+      }  
+
+    }
+
+    let primeiraLetraMes = Number(mes.toString().slice(0, 1));
+
+    if(primeiraLetraMes > 3 && (Number(mes.toString().slice(1, 2)) != 0))mes+=1;
+    else mes+=10;
+
+    segundoDigitoDia=0;
+    primeiroDigitoDia=1;
   }
-  
 }
 
-console.log(procurarProximaDataPalindromo(2013));
+console.log(procurarProximaDataPalindromo(2094));
