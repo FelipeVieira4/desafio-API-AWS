@@ -19,7 +19,8 @@ const verificarDataPalindromo = (data) => {
 
 const procurarProximaDataPalindromo = (ano) =>{
 
-  let mes =Number(ano.toString().slice(0, 2).split("").reverse().join(""));
+  ano++;
+  let mes =(ano.toString().slice(0, 2).split("").reverse().join(""));
   let dia = ano.toString().slice(2, 4); // 2025 -> 25
 
   let segundoDigitoDia = Number(dia.toString().slice(0, 1)) // dia:24 -> 2
@@ -27,15 +28,18 @@ const procurarProximaDataPalindromo = (ano) =>{
 
   let qtdDiasMes;
 
+  
   if(primeiroDigitoDia > 3){
     primeiroDigitoDia = 0;
     segundoDigitoDia++;
   }
-
+  
+  console.log(mes);
   while(true){
 
+
     //##X#
-    for(let segundoDigito = segundoDigitoDia; segundoDigito < 9; segundoDigito++){
+    for(let segundoDigito = segundoDigitoDia; segundoDigito <= 9; segundoDigito++){
 
       //###X
       for(let primeiroDigito = primeiroDigitoDia; primeiroDigito <= 3; primeiroDigito++){
@@ -45,13 +49,10 @@ const procurarProximaDataPalindromo = (ano) =>{
         // 02/02/0202 -> 02/02/2020 -> inverte o dia
         let dataRegex = `${diaString.toString()}/${mes.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0').split("").reverse().join("")+diaString.split("").reverse().join("").padStart(2, '0')}`;
 
-        console.log(dataRegex);
 
-        /*
-        qtdDiasMes = new Date(mes.toString().padStart(2, '0').split("").reverse().join("")+diaString,mes.toString().padStart(2, '0'),0).getDate();
-        */
+        qtdDiasMes = new Date(mes.toString().padStart(2, '0').split("").reverse().join("")+diaString.split("").reverse().join("").padStart(2, '0'),mes.toString().padStart(2, '0'),0).getDate();
 
-        if (verificarDataPalindromo(dataRegex)) {
+        if (verificarDataPalindromo(dataRegex) && Number(diaString) < qtdDiasMes) {
           return dataRegex;
         }
 
@@ -59,7 +60,9 @@ const procurarProximaDataPalindromo = (ano) =>{
 
     }
 
-    let primeiraLetraMes = Number(mes.toString().slice(0, 1));
+
+    let primeiraLetraMes = Number(mes.toString().slice(0, 1).padStart(2, '0'));
+    console.log(primeiraLetraMes);
 
     if(primeiraLetraMes > 3 && (Number(mes.toString().slice(1, 2)) != 0))mes+=1;
     else mes+=10;
@@ -69,4 +72,4 @@ const procurarProximaDataPalindromo = (ano) =>{
   }
 }
 
-console.log(procurarProximaDataPalindromo(2094));
+console.log(procurarProximaDataPalindromo("2033"));
