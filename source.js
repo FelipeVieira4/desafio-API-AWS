@@ -29,7 +29,7 @@ const procurarProximaDataPalindromo = (ano) =>{
 
     let qtdDiasMes = new Date(ano,mes,0).getDate();
 
-    if((dia <= qtdDiasMes) && mes <= 12){
+    if((dia <= qtdDiasMes) && mes <= 12 && dia != 0){
 
       let dataRegex = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano}`;
 
@@ -45,7 +45,7 @@ const procurarProximaDataPalindromo = (ano) =>{
   return "NÃO EXISTE MAIS DATA PALINDROMO VÁLIDA NESSE FORMATO DIA/MES/ANO";
 }
 
-console.log(procurarProximaDataPalindromo(2025));
+console.log(procurarProximaDataPalindromo(2300));
 
 exports.handler = async function(event){
   return {

@@ -11,7 +11,6 @@ const verificarDataPalindromo = (data) => {
 
   let qtdDiasMes = new Date(dataArray[2],dataArray[1],0).getDate();
 
-  console.log(qtdDiasMes);
   if (concatenacaoDiaMes == anoInvertido && dataArray[0] <= qtdDiasMes) {
     return true;
   }
@@ -22,7 +21,7 @@ const verificarDataPalindromo = (data) => {
 
 const procurarProximaDataPalindromo = (ano) =>{
 
-  ano++;
+  ano++;// Ir pro proximo ano
 
   let mes =(ano.toString().slice(0, 2).split("").reverse().join(""));
   let dia = ano.toString().slice(2, 4); // 2025 -> 25
@@ -34,12 +33,23 @@ const procurarProximaDataPalindromo = (ano) =>{
   
   let qtdDiasMes = new Date(ano,mes,0).getDate();
 
-  if(Number(dia.split("").reverse().join("")) > qtdDiasMes){
+
+  if(mes>12){
+    let primeiraLetraMes = Number(mes.toString().slice(0, 1));
+    let segundaLetraMes = Number(mes.toString().slice(1, 2));
+
+    primeiraLetraMes=0;
+    segundaLetraMes++;
+    mes=primeiraLetraMes+""+segundaLetraMes;
+
+    primeiroDigitoDia = 1;
+    segundoDigitoDia = 0;
+  }
+  else if(Number(dia.split("").reverse().join("")) > qtdDiasMes){//Validar dia
     primeiroDigitoDia = 0;
     segundoDigitoDia++;
   }
 
-  console.log(primeiroDigitoDia+""+segundoDigitoDia);
   while(true){
 
 
@@ -53,8 +63,7 @@ const procurarProximaDataPalindromo = (ano) =>{
 
         // 02/02/0202 -> 02/02/2020 -> inverte o dia
         let dataRegex = `${diaString.toString()}/${mes.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0').split("").reverse().join("")+diaString.split("").reverse().join("").padStart(2, '0')}`;
-
-
+        console.log("TEST");
         if(verificarDataPalindromo(dataRegex)) {
           return dataRegex;
         }
@@ -76,4 +85,4 @@ const procurarProximaDataPalindromo = (ano) =>{
   }
 }
 
-console.log(procurarProximaDataPalindromo("2012"));
+console.log(procurarProximaDataPalindromo("1204"));
