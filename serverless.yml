@@ -1,14 +1,17 @@
-service: web-app-123
+service: desafio-service
 
 provider:
   name: aws
   runtime: nodejs20.x
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-1'}
+  region: ${opt:region, 'us-east-2'}
   memorySize: 128
   timeout: 10
 functions:
   source:
     handler: source.handler
     description: function description
-    
+    events:
+      - http: 
+          path: data
+          method: post

@@ -176,7 +176,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/web-app-123/dev/1700744604670-2023-11-23T13:03:24.670Z/web-app-123.zip"
+                "S3Key": "serverless/web-app-123/dev/1700930971924-2023-11-25T16:49:31.924Z/web-app-123.zip"
               },
               "Handler": "source.handler",
               "Runtime": "nodejs20.x",
@@ -195,14 +195,14 @@
               "SourceLogGroup"
             ]
           },
-          "SourceLambdaVersionQCQ3DRrjrXfjEJzEdesuqs7aa59VLjrSKy3beU94FOw": {
+          "SourceLambdaVersionpWveW7zyWBsS8f1Xuy9Y1ANCBe5QBe7O0XDoy17QJ1w": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SourceLambdaFunction"
               },
-              "CodeSha256": "3ZOWoYjYIqi4Rhh34hmQ5tuRyCTEsGp4z6u8CIzdDvc=",
+              "CodeSha256": "LQc+sr1o4RJjsqaYnQgna0hsI8sUIBYA3iAPIemUsYQ=",
               "Description": "function description"
             }
           }
@@ -219,7 +219,7 @@
           "SourceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SourceLambdaVersionQCQ3DRrjrXfjEJzEdesuqs7aa59VLjrSKy3beU94FOw"
+              "Ref": "SourceLambdaVersionpWveW7zyWBsS8f1Xuy9Y1ANCBe5QBe7O0XDoy17QJ1w"
             },
             "Export": {
               "Name": "sls-web-app-123-dev-SourceLambdaFunctionQualifiedArn"
@@ -323,7 +323,7 @@
         "timeout": 10,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "SourceLambdaVersionQCQ3DRrjrXfjEJzEdesuqs7aa59VLjrSKy3beU94FOw"
+        "versionLogicalId": "SourceLambdaVersionpWveW7zyWBsS8f1Xuy9Y1ANCBe5QBe7O0XDoy17QJ1w"
       }
     },
     "configValidationMode": "warn",
@@ -342,7 +342,7 @@
     "artifact": "/home/felipevieira/Documents/projects/javaScript/desafio-API-AWS/.serverless/web-app-123.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/web-app-123/dev/1700744604670-2023-11-23T13:03:24.670Z",
+    "artifactDirectoryName": "serverless/web-app-123/dev/1700930971924-2023-11-25T16:49:31.924Z",
     "artifact": "web-app-123.zip"
   }
 }

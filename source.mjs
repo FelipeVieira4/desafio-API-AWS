@@ -8,8 +8,8 @@ const verificarDataPalindromo = (data) => {
 
   const dataArray = data.split("/");//  dataArray[0] = dia dataArray[1] = mes dataArray[2] = ano
 
-  let concatenacaoDiaMes = dataArray[0] + dataArray[1];//"12" + "02" = "1202"
-  let anoInvertido = dataArray[2].split("").reverse().join("");//inverter string "2021" => "1202" 
+  let concatenacaoDiaMes = dataArray[0].padStart(2, '0') + dataArray[1].padStart(2, '0');//"12" + "02" = "1202"
+  let anoInvertido = dataArray[2].split("").reverse().join("").padStart(2, '0');//inverter string "2021" => "1202" 
 
   let qtdDiasMes = new Date(dataArray[2], dataArray[1], 0).getDate();
 
@@ -21,18 +21,20 @@ const verificarDataPalindromo = (data) => {
 };
 
 /*Função para procurar proxima data palindromo*/
+
 const procurarProximaDataPalindromo = (data) => {
 
   const dataArray = data.split("/");  //  dataArray[0] = dia dataArray[1] = mes dataArray[2] = ano
 
+  if(dataArray.length != 3){
+    return "ERRO";
+  }
 
-  let ano = dataArray[2].toString();
+  let ano = dataArray[2].toString().padStart(4, '0');
 
   //Incrementar mais um ano a string
-  let ultimoDiaAno = Number(dataArray[2].toString().slice(3, 4));
-  ano = dataArray[2].toString().slice(0, 3) + (ultimoDiaAno+1).toString();
-
-  //console.log(ano.toString());
+  let ultimoDiaAno = Number(dataArray[2].toString().slice(3, 4))+1;
+  ano = dataArray[2].toString().slice(0, 3) + (ultimoDiaAno).toString();
 
   let mes = ano.toString().slice(0, 2).split("").reverse().join("");
   let dia = ano.toString().slice(2, 4).split("").reverse().join(""); // 2025 -> 25
@@ -42,13 +44,16 @@ const procurarProximaDataPalindromo = (data) => {
 
   let qtdDiasMes = new Date(ano, mes, 0).getDate();// Criar um objeto da classe Date para pegar qu
 
-  //Validar dia
+  //Valídar dia
   if (Number(dia) > qtdDiasMes) {
     primeiroDigitoDia = 1;
     segundoDigitoDia++;
   }
 
-  while (true) {
+  //console.log(primeiroDigitoDia+""+segundoDigitoDia);
+  //console.log(ano);
+
+  while (Number(ano) <= 9092) {
 
     //ano -> ##X# pegar penultimo número do ano 
     for (let segundoDigito = segundoDigitoDia; segundoDigito <= 9; segundoDigito++) {
@@ -60,7 +65,7 @@ const procurarProximaDataPalindromo = (data) => {
 
         // Variáveis 12; 02; -> 12/02/2021
         let dataRegex = `${diaString.toString()}/${mes.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0').split("").reverse().join("") + diaString.split("").reverse().join("").padStart(2, '0')}`;
-        
+        ano = `${mes.toString().padStart(2, '0').split("").reverse().join("") + diaString.split("").reverse().join("").padStart(2, '0')}`;
         //console.log("(DEBUG):"+dataRegex);
         if (verificarDataPalindromo(dataRegex)) {
           return dataRegex;
@@ -86,30 +91,26 @@ const procurarProximaDataPalindromo = (data) => {
 
     segundoDigitoDia = 0;
     primeiroDigitoDia = 1;
+
+    console.log(ano);
   }
+
+  return "Não há mais data políndroma depois dessa";
 }
 
-
-var valor = "01/01/0000";
-for(i = 0; i < 100; i++){
-  valor = procurarProximaDataPalindromo(valor);
-  console.log(valor);
-}
+console.log(procurarProximaDataPalindromo("06/03/2023"));
+//console.log(verificarDataPalindromo("2/2/2020"));
 
 
 /*
 export const handler = async (event) => {
+  let valida = "";
 
-  let msg1 = "";
-  if(verificarDataPalindromo(event.data)){
-    msg1 = "Data Válida";
-  }else{
-    msg1 = "Data não Válida"
-  }
+  valida = verificarDataPalindromo(event.data)?"Válida":"Inválida";
 
   const response = {
     statusCode: 200,
-    body: JSON.stringify(msg1+"\n"+procurarProximaDataPalindromo(event.data)),
+    body: JSON.stringify(`Essa data é ${valida}`+"\n"+procurarProximaDataPalindromo(event.data)),
   };
   return response;
 };
