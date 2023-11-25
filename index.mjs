@@ -98,20 +98,19 @@ const procurarProximaDataPalindromo = (data) => {
   return "Não há mais data políndroma depois dessa";
 }
 
-console.log(procurarProximaDataPalindromo("06/03/2023"));
+//console.log(procurarProximaDataPalindromo("06/03/2023"));
 //console.log(verificarDataPalindromo("2/2/2020"));
 
 
-/*
+
 export const handler = async (event) => {
   let valida = "";
-
-  valida = verificarDataPalindromo(event.data)?"Válida":"Inválida";
+  let data=event.data;
+  valida = verificarDataPalindromo(data)?"Válida":"Inválida";
 
   const response = {
     statusCode: 200,
-    body: JSON.stringify(`Essa data é ${valida}`+"\n"+procurarProximaDataPalindromo(event.data)),
+    body: JSON.stringify(`Essa data é ${valida}`+"\n"+procurarProximaDataPalindromo(data)),
   };
   return response;
 };
-*/

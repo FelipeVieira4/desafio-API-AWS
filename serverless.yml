@@ -8,8 +8,8 @@ provider:
   memorySize: 128
   timeout: 10
 functions:
-  source:
-    handler: source.handler
+  index:
+    handler: index.handler
     description: function description
     events:
       - http: 
