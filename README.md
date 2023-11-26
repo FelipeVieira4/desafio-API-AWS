@@ -12,22 +12,25 @@ seguindo exemplo:
 ```
 
 ### Observação:
-É recomendado para números com valores menores que 10 devem apresentar um zero a esquerda do valor.
+O programa utiliza o modelo DD/MM/YYYY como mostrado a seguir
 
-correto :
 ```json
 "data":"02/02/2020"
 ```
-
-incorreto :
+ou
 ```json
 "data":"2/2/2020"
 ```
 
-## Softwares Utilizados
-* Node.js - (v20.8.1 - Fedora 39)
-* Serverless - (3.37.0 - npm)
-* AWS - Amazon Web Services - (free trial)
+
+
+pode ser feito uma requisição na API pela URL
+
+[https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data](https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data)
+
+o Request tem que ser feito em "PUT" como mostrado abaixo
+
+![Alt text](assents/image.png)
 
 ## Links de Artigos e Sites Utilizados
 ### Serverless
@@ -45,5 +48,9 @@ incorreto :
 * [https://www.youtube.com/watch?v=FaybjGx3uQI](https://www.youtube.com/watch?v=FaybjGx3uQI)
 * [https://www.youtube.com/watch?v=ktH_HhQDgLY&t=365s](https://www.youtube.com/watch?v=ktH_HhQDgLY&t=365s)
 
+## Softwares Utilizados
+* Node.js - (v20.8.1 - Fedora 39)
+* Serverless - (3.37.0 - npm)
+* AWS - Amazon Web Services - (free trial)
 
 ultima atualização : 19/11/2023
