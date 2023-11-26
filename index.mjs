@@ -95,12 +95,19 @@ const procurarProximaDataPalindromo = (data) => {
 
 //console.log(procurarProximaDataPalindromo("06/03/2021"));
 //console.log(verificarDataPalindromo("2/2/2021"));
-
+/*
+var data = "01/02/2001";
+for(let i = 0; i < 10; i++){
+  data=procurarProximaDataPalindromo(data);
+  console.log(data);
+}
+*/
 
 
 export const handler = async (event) => {
   let data=event.data;
 
+  // Válidar data
   if(data == null || typeof data !== "string" || data.split("/").length != 3){
     return {
       statusCode: 200,
