@@ -1,10 +1,7 @@
-# Desafio Adapcon: Criar uma API
+# Desafio Adapcon: Desenvolvimento de uma API
 
 ## Funcionamento da API
-
-Deve ser feito um POST na API com JSON
-
-seguindo exemplo:
+A API requer uma requisição com formato JSON, conforme o exemplo abaixo:
 ```json
 {
   "data":"12/02/2021"
@@ -12,8 +9,9 @@ seguindo exemplo:
 ```
 
 ### Observação:
-O programa utiliza o modelo DD/MM/YYYY como mostrado a seguir
+O formato de datas utilizado pela API é DD/MM/YYYY.
 
+Exemplos válidos:
 ```json
 "data":"02/02/2020"
 ```
@@ -24,15 +22,14 @@ ou
 
 
 
-pode ser feito uma requisição na API pela URL
-
+É possível realizar uma requisição à API através da seguinte URL:
 [https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data](https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data)
 
-o Request tem que ser feito em "PUT" como mostrado abaixo
+A requisição deve ser realizada com o método "PUT", conforme demonstrado abaixo:
 
 ![Alt text](assents/image.png)
 
-## Links de Artigos e Sites Utilizados
+## Links de Referência
 ### Serverless
 * [https://www.serverless.com](https://www.serverless.com)
 
@@ -53,4 +50,4 @@ o Request tem que ser feito em "PUT" como mostrado abaixo
 * Serverless - (3.37.0 - npm)
 * AWS - Amazon Web Services - (free trial)
 
-ultima atualização : 19/11/2023
+Última atualização : 19/11/2023
