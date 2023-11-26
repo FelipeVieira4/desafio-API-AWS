@@ -176,7 +176,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/desafio-service/dev/1701019876841-2023-11-26T17:31:16.841Z/desafio-service.zip"
+                "S3Key": "serverless/desafio-service/dev/1701033571232-2023-11-26T21:19:31.232Z/desafio-service.zip"
               },
               "Handler": "index.handler",
               "Runtime": "nodejs20.x",
@@ -195,14 +195,14 @@
               "IndexLogGroup"
             ]
           },
-          "IndexLambdaVersionPZVOt7RgQ7sIB69DWPQKYkLwtW38p8Tfsa336PnRE": {
+          "IndexLambdaVersionNP0k6dqDVAYbXRoH3WdKXzsBs8Z67A1k4WRVr7ip4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "IndexLambdaFunction"
               },
-              "CodeSha256": "mWKVcF//uRNYPzlq1z1jPxD5LZQ2Df998CN03F3TZbA=",
+              "CodeSha256": "Zfxd5QhrG3ozMIyP3bdDnquCX3XfwRtiyNdV1rhYM5U=",
               "Description": "function description"
             }
           },
@@ -279,7 +279,7 @@
               "IndexLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1701019874324": {
+          "ApiGatewayDeployment1701033568708": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -341,7 +341,7 @@
           "IndexLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "IndexLambdaVersionPZVOt7RgQ7sIB69DWPQKYkLwtW38p8Tfsa336PnRE"
+              "Ref": "IndexLambdaVersionNP0k6dqDVAYbXRoH3WdKXzsBs8Z67A1k4WRVr7ip4"
             },
             "Export": {
               "Name": "sls-desafio-service-dev-IndexLambdaFunctionQualifiedArn"
@@ -479,7 +479,7 @@
         "timeout": 10,
         "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "IndexLambdaVersionPZVOt7RgQ7sIB69DWPQKYkLwtW38p8Tfsa336PnRE"
+        "versionLogicalId": "IndexLambdaVersionNP0k6dqDVAYbXRoH3WdKXzsBs8Z67A1k4WRVr7ip4"
       }
     },
     "configValidationMode": "warn",
@@ -498,7 +498,7 @@
     "artifact": "/home/felipevieira/Documents/projects/javaScript/desafio-API-AWS/.serverless/desafio-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/desafio-service/dev/1701019876841-2023-11-26T17:31:16.841Z",
+    "artifactDirectoryName": "serverless/desafio-service/dev/1701033571232-2023-11-26T21:19:31.232Z",
     "artifact": "desafio-service.zip"
   }
 }

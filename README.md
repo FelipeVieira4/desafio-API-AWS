@@ -1,7 +1,11 @@
 # Desafio Adapcon: Desenvolvimento de uma API
 
 ## Funcionamento da API
-A API requer uma requisição com formato JSON, conforme o exemplo abaixo:
+API roda na AWS com utilização do framework Serverless requer uma requisição com formato JSON, utiliza
+varíavel chamada "data" em formato String.
+
+Exemplo:
+
 ```json
 {
   "data":"12/02/2021"
@@ -23,6 +27,7 @@ ou
 
 
 É possível realizar uma requisição à API através da seguinte URL:
+
 [https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data](https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data)
 
 A requisição deve ser realizada com o método "PUT", conforme demonstrado abaixo:
@@ -49,5 +54,6 @@ A requisição deve ser realizada com o método "PUT", conforme demonstrado abai
 * Node.js - (v20.8.1 - Fedora 39)
 * Serverless - (3.37.0 - npm)
 * AWS - Amazon Web Services - (free trial)
+* Insomnia
 
-Última atualização : 19/11/2023
+Última atualização : 26/11/2023
