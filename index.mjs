@@ -104,6 +104,7 @@ export const handler = async (event) => {
   if(data == null || typeof data !== "string" || data.split("/").length != 3){
     return {
       statusCode: 200,
+      body: JSON.stringify("ERRO[data não encontrada ou inválida"),
     };
   }
 
