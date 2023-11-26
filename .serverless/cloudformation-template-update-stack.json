@@ -162,7 +162,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/desafio-service/dev/1700956275148-2023-11-25T23:51:15.148Z/desafio-service.zip"
+          "S3Key": "serverless/desafio-service/dev/1700957785146-2023-11-26T00:16:25.146Z/desafio-service.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs20.x",
@@ -181,14 +181,14 @@
         "IndexLogGroup"
       ]
     },
-    "IndexLambdaVersionHkaUfjiZK8tWgmJKjhqjny9bf9RJJKRuM5T0Y5bkwDI": {
+    "IndexLambdaVersiontv5IcYeNfH8gyyrB42ipJtIbrjdKKHPuqtz8cDAk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "IndexLambdaFunction"
         },
-        "CodeSha256": "JQw2bkVAqstPdEN3h296C2y1w6PIMn6fMk9BwWfSB5c=",
+        "CodeSha256": "A/lQ5qZcIUw2FOe8MUL+5CefcYdIqAwvpB2kUaBgxMg=",
         "Description": "function description"
       }
     },
@@ -265,7 +265,7 @@
         "IndexLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1700956272566": {
+    "ApiGatewayDeployment1700957782531": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -327,7 +327,7 @@
     "IndexLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "IndexLambdaVersionHkaUfjiZK8tWgmJKjhqjny9bf9RJJKRuM5T0Y5bkwDI"
+        "Ref": "IndexLambdaVersiontv5IcYeNfH8gyyrB42ipJtIbrjdKKHPuqtz8cDAk"
       },
       "Export": {
         "Name": "sls-desafio-service-dev-IndexLambdaFunctionQualifiedArn"
