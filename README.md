@@ -12,6 +12,11 @@ Exemplo:
 }
 ```
 
+É possível realizar uma requisição à API através da seguinte URL:
+
+[https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data](https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data)
+
+
 ### Observação:
 O formato de datas utilizado pela API é DD/MM/YYYY.
 
@@ -23,12 +28,6 @@ ou
 ```json
 "data":"2/2/2020"
 ```
-
-
-
-É possível realizar uma requisição à API através da seguinte URL:
-
-[https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data](https://1qsdb5tya3.execute-api.us-east-2.amazonaws.com/dev/data)
 
 A requisição deve ser realizada com o método "PUT", conforme demonstrado abaixo:
 
