@@ -21,15 +21,12 @@ const verificarDataPalindromo = (data) => {
 };
 
 /*Função para procurar proxima data palindromo*/
-
 const procurarProximaDataPalindromo = (data) => {
 
   const dataArray = data.split("/");  //  dataArray[0] = dia dataArray[1] = mes dataArray[2] = ano
 
-  if(dataArray.length != 3){
-    return "ERRO";
-  }
-
+  if(dataArray.length != 3) return "ERRO";
+  
   let ano = dataArray[2].toString().padStart(4, '0');
 
   //Incrementar mais um ano a string
@@ -92,7 +89,7 @@ const procurarProximaDataPalindromo = (data) => {
     segundoDigitoDia = 0;
     primeiroDigitoDia = 1;
 
-    console.log(ano);
+    //console.log(ano);
   }
 
   return "Não há mais data políndroma depois dessa";
